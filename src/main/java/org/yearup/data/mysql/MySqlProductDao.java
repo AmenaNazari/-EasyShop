@@ -210,7 +210,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
 
     @Override
     public List<Product> getProductsByCategoryId(int categoryId) {
-        return List.of();
+        return listByCategoryId(categoryId);
     }
 
     protected static Product mapRow(ResultSet row) throws SQLException
