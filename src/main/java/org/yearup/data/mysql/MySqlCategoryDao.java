@@ -50,6 +50,11 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         // delete category
     }
 
+    @Override
+    public Category getCategoryById(int id) {
+        return null;
+    }
+
     private Category mapRow(ResultSet row) throws SQLException
     {
         int categoryId = row.getInt("category_id");
