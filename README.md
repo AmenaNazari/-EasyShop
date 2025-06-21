@@ -1,71 +1,106 @@
-# Project Title
+EasyShop E-Commerce API
+📋 Description of the Project
+EasyShop is a Java-based Spring Boot REST API that serves as the backend for an online store. The application allows users to browse and search for products, manage their shopping cart, and register/login to access features. Administrators have the ability to manage product and category data. The project focuses on API security, CRUD functionality, bug fixing, and designing extendable features for future development.
 
-## Description of the Project
+Intended Users:
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+Customers who want to browse, shop, and order products online
 
-![Class Diagram](path/to/your/class_diagram.png)
+Admins who manage product listings and categories
 
-## User Stories
+Core Functionality:
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
+User registration and login with role-based access
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+CRUD operations for products and categories (admin-only)
 
-## Setup
+Product search by category, price range, and color
 
-Instructions on how to set up and run the project using IntelliJ IDEA.
+Shopping cart persistence by user
 
-### Prerequisites
+Checkout flow converting cart to order
 
-- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
-- Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
 
-### Running the Application in IntelliJ
 
-Follow these steps to get your application running within IntelliJ IDEA:
+🧑‍💻 User Stories
+As a guest, I want to browse products so that I can see what's available in the store.
 
-1. Open IntelliJ IDEA.
-2. Select "Open" and navigate to the directory where you cloned or downloaded the project.
-3. After the project opens, wait for IntelliJ to index the files and set up the project.
-4. Find the main class with the `public static void main(String[] args)` method.
-5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
+As a registered user, I want to log in and manage my shopping cart so that I can prepare for checkout.
 
-## Technologies Used
+As an admin, I want to add, update, or remove categories and products so that the product catalog stays up to date.
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+As a user, I want my cart to stay saved when I log out and come back later.
 
-## Demo
+⚙️ Setup
+Prerequisites
+IntelliJ IDEA: Download IntelliJ
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
+Java SDK: Java 17 (recommended)
 
-![Application Screenshot](path/to/your/screenshot.png)
+MySQL: A running MySQL server with the EasyShop DB created via the provided script
 
-## Future Work
+Postman: For testing API endpoints
 
-Outline potential future enhancements or functionalities you might consider adding:
+Running the Application in IntelliJ
+Clone this repo into your machine.
 
-- Additional feature to be developed.
-- Improvement of current functionalities.
+Open IntelliJ IDEA.
 
-## Resources
+Select "Open" and navigate to the project folder.
 
-List resources such as tutorials, articles, or documentation that helped you during the project.
+Set up the MySQL database by running create_database.sql from the database folder.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+Add application.properties with your DB credentials and JWT secret.
 
-## Team Members
+Find the main class (e.g., EasyShopApplication.java) and run it.
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+Use Postman to test endpoints (localhost:8080/...).
 
-## Thanks
+💻 Technologies Used
+Java 17
 
-Express gratitude towards those who provided help, guidance, or resources:
+Spring Boot
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+Spring Security
+
+JWT Authentication
+
+MySQL
+
+Maven
+
+Postman
+
+🎥 Demo
+
+
+(Optional) Record a GIF using Giphy Capture or OBS Studio.
+
+🌱 Future Work
+Add a wishlist feature
+
+Email confirmation after checkout
+
+Product review system
+
+Admin dashboard for low-stock alerts
+
+Payment integration (Stripe or PayPal)
+
+📚 Resources
+Spring Boot Docs
+
+JWT Introduction
+
+Baeldung Spring Boot Tutorials
+
+👥 Team Members
+Amena Nazari – Full-stack backend development, feature implementation, testing, and debugging
+
+🙏 Thanks
+Special thanks to Maroun Raymond for his continuous support, clear explanations, and guidance throughout this capstone project.
+
+Thanks to classmates and the developer community for ideas and inspiration.
+
+
  
