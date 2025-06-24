@@ -12,5 +12,4 @@ public interface CategoryDao
     void update(int categoryId, Category category);
     void delete(int categoryId);
 
-    Category getCategoryById(int id);
 }
