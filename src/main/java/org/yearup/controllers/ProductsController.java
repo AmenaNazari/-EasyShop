@@ -46,23 +46,21 @@ public class ProductsController
     @PreAuthorize("permitAll()")
     public Product getById(@PathVariable int id )
     {
-        Product product = null;
         try
         {
-            product = productDao.getById(id);
+            var product = productDao.getById(id);
+
+            if(product == null)
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
+            return product;
         }
         catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
-
-        if(product == null)
-        {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
-
-        return product;
     }
+
     @PostMapping()
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Product addProduct(@RequestBody Product product)
@@ -83,7 +81,7 @@ public class ProductsController
     {
         try
         {
-            productDao.create(product);
+            productDao.update(id, product);
         }
         catch(Exception ex)
         {
