@@ -52,7 +52,9 @@ public class CategoriesController {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);
             }
             return category;
-        } catch (Exception e) {
+        } catch (ResponseStatusException notFound) {
+            throw notFound;
+        }catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
     }

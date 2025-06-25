@@ -54,8 +54,10 @@ public class ProductsController
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
             return product;
-        }
-        catch(Exception ex)
+        }catch (ResponseStatusException notFound) {
+            // re-throw 404 and let Spring handle it
+            throw notFound;
+        }catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
