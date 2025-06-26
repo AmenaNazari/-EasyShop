@@ -3,9 +3,7 @@ package org.yearup.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.yearup.data.ProductDao;
 import org.yearup.data.ShoppingCartDao;
@@ -54,7 +52,20 @@ public class ShoppingCartController
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
     }
-
+    @PostMapping("/products/{productId}")
+    public void addToCart(@PathVariable int productId, Principal principal)
+    {
+        try
+        {
+            String username = principal.getName();
+            User user = userDao.getByUserName(username);
+            shoppingCartDao.addToCart(user.getId(), productId, 1); // add 1 or update quantity
+        }
+        catch (Exception e)
+        {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to add to cart.");
+        }
+    }
     // add a POST method to add a product to the cart - the url should be
     // https://localhost:8080/cart/products/15 (15 is the productId to be added
 
