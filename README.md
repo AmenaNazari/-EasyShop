@@ -1,6 +1,11 @@
 EasyShop E-Commerce API
+
 📋 Description of the Project
-EasyShop is a Java-based Spring Boot REST API that serves as the backend for an online store. The application allows users to browse and search for products, manage their shopping cart, and register/login to access features. Administrators have the ability to manage product and category data. The project focuses on API security, CRUD functionality, bug fixing, and designing extendable features for future development.
+
+EasyShop is a Java-based Spring Boot REST API that serves as the backend for an online store.
+The application allows users to browse and search for products, manage their shopping cart, and register/login to access features. 
+Administrators have the ability to manage product and category data. 
+The project focuses on API security, CRUD functionality, bug fixing, and designing extendable features for future development.
 
 Intended Users:
 
@@ -71,10 +76,12 @@ Maven
 
 Postman
 
-🎥 Demo
+🎥 Demo ![image](https://github.com/user-attachments/assets/689b4933-3a44-42ae-a1b6-100652fc7070)
+![image](https://github.com/user-attachments/assets/689b4933-3a44-42ae-a1b6-100652fc7070)
 
 
-(Optional) Record a GIF using Giphy Capture or OBS Studio.
+
+
 
 🌱 Future Work
 Add a wishlist feature
@@ -89,10 +96,11 @@ Payment integration (Stripe or PayPal)
 
 📚 Resources
 Spring Boot Docs
-
-JWT Introduction
-
-Baeldung Spring Boot Tutorials
+workbooks
+github.com/RayMaroun
+google
+AI
+API project
 
 👥 Team Members
 Amena Nazari – Full-stack backend development, feature implementation, testing, and debugging
