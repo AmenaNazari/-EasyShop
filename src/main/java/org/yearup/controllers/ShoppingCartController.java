@@ -91,7 +91,23 @@ public class ShoppingCartController
     // the BODY should be a ShoppingCartItem - quantity is the only value that will be updated
 
 
+
+    @DeleteMapping
+    public void clearCart(Principal principal)
+    {
+        try
+        {
+            String username = principal.getName();
+            User user = userDao.getByUserName(username);
+            shoppingCartDao.clearCart(user.getId());
+        }
+        catch (Exception e)
+        {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Unable to clear cart.");
+        }
+    }
+}
     // add a DELETE method to clear all products from the current users cart
     // https://localhost:8080/cart
 
-}
+

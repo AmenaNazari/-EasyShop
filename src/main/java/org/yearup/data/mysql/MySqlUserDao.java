@@ -37,7 +37,7 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao
             ps.executeUpdate();
 
             User user = getByUserName(newUser.getUsername());
-            user.setPassword("");
+            user.setPassword("")d;
 
             return user;
 
